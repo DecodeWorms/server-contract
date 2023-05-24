@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package salary;
+
+message Salary{
+  string id =1;
+  string playerId =2;
+  int32 weeklySalary =3;
+  int32 bonus =4;
+  string  salary_status =5;
+  string bonus_status =6;
+}
