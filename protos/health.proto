@@ -1,8 +1,9 @@
 syntax = "proto3";
 
 package health;
+import "types.proto";
 
-message Health{
+message CreateHealthRequest{
   string id  =1;
   string player_id =2;
   string date_sustained_injury =3;
@@ -11,4 +12,35 @@ message Health{
   string health_status =6;
 }
 
+message GetHealthByPlayerIdRequest{
+  string player_id =1;
+}
+
+message UpdateHealthRequest{
+  string player_id =1;
+  string date_sustained_injury =2;
+  string date_predicted_to_be_fine =3;
+  string injury_status =4;
+  string health_status =5;
+}
+
+message DeleteHealthRequest{
+  string player_id =1;
+}
+
+message GetDateToBeFineRequest{
+  string player_id =1;
+}
+
+message GetHealthStatusRequest{
+  string player_id =1;
+}
+
+service HealthServices{
+  rpc CreateHealth(CreateHealthRequest) returns (types.Empty);
+  rpc GetDateToBeFine(GetDateToBeFineRequest) returns (types.HealthStatausResponse);
+  rpc GetHealthStatus(GetHealthStatusRequest) returns (types.HealthStatusResponse);
+  rpc UpdateHealthStatus(UpdateHealthRequest) returns (types.Empty);
+  rpc DeleteHealthStatus(DeleteHealthRequest) returns (types.Empty);
+}
 

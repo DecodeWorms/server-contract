@@ -1,8 +1,9 @@
 syntax = "proto3";
 
 package salary;
+import "types.proto";
 
-message Salary{
+message CreateSalaryRequest{
   string id =1;
   string playerId =2;
   int32 weeklySalary =3;
@@ -10,3 +11,23 @@ message Salary{
   string  salary_status =5;
   string bonus_status =6;
 }
+
+message GetSalaryRequest{
+  string player_id =1;
+}
+
+message GetWeeklySalaryRequest{
+  string player_id =1;
+}
+
+message GetBonusRequest{
+  string player_id =1;
+}
+
+service SalaryServices{
+  rpc CreateSalary(CreateSalaryRequest) returns (types.Empty);
+  rpc GetSalaryAndBonus(GetSalaryRequest) returns (types.SalaryResponse);
+  rpc GetWeeklySalary(GetSalaryRequest) returns (types.SalaryResponse);
+  rpc GetBonus(GetBonusRequest) returns (types.SalaryResponse);
+}
+

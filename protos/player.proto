@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package player;
+import "types.proto";
 
 message CreatePlayerRequest{
   string id =1;
@@ -29,6 +30,63 @@ message CreatePlayerFieldRequest{
   string position_on_the_field =8;
   string number_of_goals_scored =9;
   string player_status =10;
+}
+
+message GetPlayerByIdRequest{
+  string id =1;
+}
+
+message UpdatePlayerPersonalInfoRequest{
+  string id =1;
+  string first_name =2;
+  string last_name =3;
+  string gender =4;
+  string marital_status =5;
+  string email =6;
+  string phone_number =7;
+}
+
+message UpdateAddressRequest{
+  string name =1;
+  string city =2;
+  string zip_code =3;
+}
+
+message GetPlayerByPhoneNumberRequest{
+  string phone_number =1;
+}
+
+message GetPlayerUsingJerseyNumberRequest{
+  string jersey_number =1;
+}
+
+message UpdatePlayerWithFieldDataRequest{
+  string id =1;
+  string year_of_experience =2;
+  string number_of_goals =3;
+  repeated string previous_clubs =4;
+  int32  jersey_number =5;
+  string year_joined =6;
+  string position_on_the_field =7;
+  string number_of_goals_scored =8;
+  string player_status =9;
+}
+
+message DeletePlayerRequest{
+  string id =1;
+}
+
+
+service PlayerService{
+  rpc CreatePlayer(CreatePlayerFieldRequest) returns (types.Empty);
+  rpc GetPlayerById(GetPlayerByIdRequest) returns(types.GetPlayerByIdResponse);
+  rpc GetPlayerByPhoneNumber(GetPlayerByPhoneNumberRequest) returns (types.GetPlayerByIdResponse);
+  rpc UpdatePlayerPersonalInfo(UpdatePlayerPersonalInfoRequest) returns (types.Empty);
+  rpc UpdateAddress(UpdateAddressRequest) returns (types.Empty);
+  rpc CreatePlayerWithFieldData(CreatePlayerFieldRequest) returns (types.Empty);
+  rpc GetPlayerByJerseyNumber(GetPlayerUsingJerseyNumberRequest) returns (types.GetPlayerByIdResponse);
+  rpc UpdatePayerWithFieldData(UpdatePlayerWithFieldDataRequest) returns (types.Empty);
+  rpc DeletePlayer(DeletePlayerRequest) returns (types.Empty);
 }
 
 
