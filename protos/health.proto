@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package health;
+
+message Health{
+  string id  =1;
+  string player_id =2;
+  string date_sustained_injury =3;
+  string date_predicted_to_be_fine =4;
+  string injury_status =5;
+  string health_status =6;
+}
+
+
