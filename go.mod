@@ -1,4 +1,4 @@
-module server-contract
+module github.com/DecodeWorms/server-contract
 
 go 1.20
 

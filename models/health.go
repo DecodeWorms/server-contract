@@ -7,4 +7,5 @@ type Health struct {
 	DatePredictedToBeFine string `json:"date_predicted_to_be_fine" bson:"date_predicted_to_be_fine"`
 	InjuryStatus          string `json:"injury_status" bson:"injury_status"`
 	HealthStatus          string `json:"health_status" bson:"health_status"`
+	InjuryTypes           string `json:"injury_types" bson:"injury_types"`
 }
