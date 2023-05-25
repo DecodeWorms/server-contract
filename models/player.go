@@ -1,13 +1,14 @@
 package models
 
 type PersonalInfo struct {
-	Id            string `json:"id" bson:"id"`
-	FirstName     string `json:"first_name" bson:"first_name"`
-	LastName      string `json:"last_name" bson:"last_name"`
-	Gender        string `json:"gender" bson:"gender"`
-	MaritalStatus string `json:"marital_status" bson:"marital_status"`
-	Email         string `json:"email" bson:"email"`
-	PhoneNumber   string `json:"phone_number" bson:"phone_number"`
+	Id            string  `json:"id" bson:"id"`
+	FirstName     string  `json:"first_name" bson:"first_name"`
+	LastName      string  `json:"last_name" bson:"last_name"`
+	Gender        string  `json:"gender" bson:"gender"`
+	MaritalStatus string  `json:"marital_status" bson:"marital_status"`
+	Email         string  `json:"email" bson:"email"`
+	PhoneNumber   string  `json:"phone_number" bson:"phone_number"`
+	Address       Address `json:"address" bson:"address"`
 }
 
 type Address struct {
