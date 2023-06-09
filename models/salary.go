@@ -1,6 +1,9 @@
 package models
 
+import "gorm.io/gorm"
+
 type Salary struct {
+	gorm.Model
 	Id           string `json:"id" bson:"id"`
 	PlayerId     string `json:"player_id" bson:"player_id"`
 	WeeklySalary int    `json:"weekly_salary" bson:"weekly_salary"`
