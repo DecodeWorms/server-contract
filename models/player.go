@@ -15,9 +15,11 @@ type PersonalInfo struct {
 }
 
 type Address struct {
-	Name    string `json:"name" bson:"name"`
-	ZipCode string `json:"zip_code" bson:"zip_code"`
-	City    string `json:"city" bson:"city"`
+	gorm.Model
+	PlayerId string `json:"personal_id" gorm:"personal_id"`
+	Name     string `json:"name" bson:"name"`
+	ZipCode  string `json:"zip_code" bson:"zip_code"`
+	City     string `json:"city" bson:"city"`
 }
 
 type FieldInfo struct {
