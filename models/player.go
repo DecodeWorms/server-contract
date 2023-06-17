@@ -24,7 +24,6 @@ type Address struct {
 
 type FieldInfo struct {
 	gorm.Model
-	Id                  string `json:"id" gorm:"id"`
 	PersonalInfoId      string `json:"player_ifo_id" gorm:"player_ifo_id"`
 	YearOfExperience    string `json:"year_of_experience" gorm:"year_of_experience"`
 	NumberOfGoalsScored int    `json:"number_of_goals_scored" gorm:"number_of_goals_scored"`
