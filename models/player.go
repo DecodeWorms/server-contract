@@ -33,6 +33,14 @@ type FieldInfo struct {
 	PlayerClubStatus    string `json:"player_club_status" gorm:"player_club_status"`
 }
 
+type ClubsHePreviouslyPlayed struct {
+	gorm.Model
+	PersonalInfoId string `json:"personal_info_id" gorm:"personal_info_id"`
+	ClubName       string `json:"club_name", gorm:"club_name"`
+	StartedYear    string `json:"started_year" gorm:"started_year"`
+	EndedYear      string `json:"ended_year" gorm:"ended_year"`
+}
+
 /*implement this
 ClubsHePreviouslyPlayed []string `json:"clubs_he_previously_played" gorm:"clubs_he_previously_played"`
 */
