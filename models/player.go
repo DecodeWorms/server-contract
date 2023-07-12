@@ -24,10 +24,9 @@ type Address struct {
 
 type FieldInfo struct {
 	gorm.Model
-	Id                  string `json:"id" gorm:"id"`
 	PersonalInfoId      string `json:"player_ifo_id" gorm:"player_ifo_id"`
 	YearOfExperience    string `json:"year_of_experience" gorm:"year_of_experience"`
-	NumberOfGoalsScored int    `json:"number_of_goals_scored" gorm:"number_of_goals_scored"`
+	NumberOfGoalsScored string `json:"number_of_goals_scored" gorm:"number_of_goals_scored"`
 	JerseyNumber        int    `json:"jersey_number" gorm:"jersey_number"`
 	YearJoined          string `json:"year_joined" gorm:"year_joined"`
 	PositionOnTheField  string `json:"position_on_the_field" gorm:"position_on_the_field"`
