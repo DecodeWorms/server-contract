@@ -4,14 +4,13 @@ import "gorm.io/gorm"
 
 type PersonalInfo struct {
 	gorm.Model
-	Id            string  `json:"id" gorm:"id"`
-	FirstName     string  `json:"first_name" gorm:"first_name"`
-	LastName      string  `json:"last_name" gorm:"last_name"`
-	Gender        string  `json:"gender" gorm:"gender"`
-	MaritalStatus string  `json:"marital_status" gorm:"marital_status"`
-	Email         string  `json:"email" gorm:"email"`
-	PhoneNumber   string  `json:"phone_number" gorm:"phone_number"`
-	Address       Address `json:"address" gorm:"address"`
+	Id            string `json:"id" gorm:"id"`
+	FirstName     string `json:"first_name" gorm:"first_name"`
+	LastName      string `json:"last_name" gorm:"last_name"`
+	Gender        string `json:"gender" gorm:"gender"`
+	MaritalStatus string `json:"marital_status" gorm:"marital_status"`
+	Email         string `json:"email" gorm:"email"`
+	PhoneNumber   string `json:"phone_number" gorm:"phone_number"`
 }
 
 type Address struct {
