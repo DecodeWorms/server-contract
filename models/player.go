@@ -26,7 +26,7 @@ type FieldInfo struct {
 	PersonalInfoId      string `json:"player_ifo_id" gorm:"player_ifo_id"`
 	YearOfExperience    string `json:"year_of_experience" gorm:"year_of_experience"`
 	NumberOfGoalsScored string `json:"number_of_goals_scored" gorm:"number_of_goals_scored"`
-	JerseyNumber        int    `json:"jersey_number" gorm:"jersey_number"`
+	JerseyNumber        string `json:"jersey_number" gorm:"jersey_number"`
 	YearJoined          string `json:"year_joined" gorm:"year_joined"`
 	PositionOnTheField  string `json:"position_on_the_field" gorm:"position_on_the_field"`
 	PlayerClubStatus    string `json:"player_club_status" gorm:"player_club_status"`
