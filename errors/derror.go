@@ -1,6 +1,9 @@
 package errors
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 // assert that Derror implement error interface
 var _ error = &Derror{}
@@ -36,7 +39,7 @@ type dErrError struct {
 	message   string `json:"message"`
 }
 
-func (d *Derror) Error() string {
+/*func (d *Derror) Error() string {
 	jsonByte, _ := json.Marshal(DerrorJsonModel{
 		dErrError{
 			code:      d.code,
@@ -45,6 +48,11 @@ func (d *Derror) Error() string {
 		},
 	})
 	return string(jsonByte)
+}
+*/
+
+func (d *Derror) Error() string {
+	return fmt.Sprintf("code : %d message : %s type : %s", d.code, d.message, d.errorType)
 }
 
 type TerrorOptionsAttribute func(d *Derror)
