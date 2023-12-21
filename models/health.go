@@ -1,9 +1,6 @@
 package models
 
-import "gorm.io/gorm"
-
 type Health struct {
-	gorm.Model
 	Id                    string `json:"id" bson:"id"`
 	PlayerId              string `json:"player_id" bson:"player_id"`
 	DateInjured           string `json:"date_injured" bson:"date_injured"`
