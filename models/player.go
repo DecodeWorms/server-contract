@@ -16,14 +16,15 @@ type PersonalInfo struct {
 type Address struct {
 	gorm.Model
 	PersonalInfoId string `json:"personal_info_id" gorm:"personal_info_id"`
-	Name           string `json:"name" gorm:"name"`
-	ZipCode        string `json:"zip_code" gorm:"zip_code"`
+	Name           string `json:"name" gorm:"personal_info_id"`
+	ZipCode        string `json:"zip_code" gorm:"personal_info_id"`
 	City           string `json:"city" gorm:"city"`
 }
 
 type FieldInfo struct {
 	gorm.Model
-	PersonalInfoId      string `json:"player_ifo_id" gorm:"player_ifo_id"`
+	PersonalInfoId      string `json:"personal_info_id" gorm:"personal_info_id"`
+
 	YearOfExperience    string `json:"year_of_experience" gorm:"year_of_experience"`
 	NumberOfGoalsScored string `json:"number_of_goals_scored" gorm:"number_of_goals_scored"`
 	JerseyNumber        string `json:"jersey_number" gorm:"jersey_number"`
@@ -39,3 +40,7 @@ type ClubsHePreviouslyPlayed struct {
 	StartedYear    string `json:"started_year" gorm:"started_year"`
 	EndedYear      string `json:"ended_year" gorm:"ended_year"`
 }
+
+/*implement this
+ClubsHePreviouslyPlayed []string `json:"clubs_he_previously_played" gorm:"clubs_he_previously_played"`
+*/
